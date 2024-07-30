@@ -1,13 +1,12 @@
 import axios from 'axios';
 
-const API_URL = 'https://promocionalesenlinea.net/api/all-stocks';
+const API_URL = 'https://promocionalesenlinea.net/api/all-products';
 
-export const searchProduct = async (sku) => {
+export const searchProduct = async () => {
   try {
     const response = await axios.post(API_URL, {
       user: 'GDL3099',
       password: 'NKEwuUIilPPfzNOVzlQu',
-      sku: sku
     });
     return response.data;
   } catch (error) {
@@ -15,3 +14,4 @@ export const searchProduct = async (sku) => {
     throw error;
   }
 };
+
